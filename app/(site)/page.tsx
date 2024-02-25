@@ -1,13 +1,14 @@
-//import getSongs from "@/actions/getSongs";
+import getSongs from "@/actions/getSongs";
 import Header from "@/components/Header";
 import ListItem from "@/components/ListItem";
 
-//import PageContent from "./components/PageContent";
+import PageContent from "./components/PageContent";
 
+// mean this page will not be crashing
 export const revalidate = 0;
 
 export default async function Home() {
-  //const songs = await getSongs();
+  const songs = await getSongs();
 
   return (
     <div
@@ -29,7 +30,8 @@ export default async function Home() {
           </h1>
         </div>
         <div>
-          List of song
+          <PageContent songs={songs} />
+          {/*{songs.map((songs) => <div>{songs.title}</div>)}*/}
         </div>
       </div>
     </div>
