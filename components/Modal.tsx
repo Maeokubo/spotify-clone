@@ -29,7 +29,7 @@ const Modal: React.FC<ModalProps> = ({
             {description}
           </Dialog.Description>
 
-          <div className="">
+          <div>
             {children}
           </div>
 

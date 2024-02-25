@@ -1,4 +1,4 @@
-"use client"
+`use client`
 
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
@@ -17,17 +17,17 @@ const AuthModal = () => {
   const {onClose, isOpen} = useAuthModal();
 
   useEffect(() => {
-    if (!session) {
+    if (session) {
       router.refresh();
-      onClose()
+      onClose();
     }
   },[session, router, onClose]);
 
-  const onChange = (open: boolean) =>{
+  const onChange = (open: boolean) => {
     if(!open){
       onClose();
     }
-  }
+  };
 
   return (
     <Modal title="Welcome back" description="Login to your account." isOpen={isOpen} onChange={onChange} >
