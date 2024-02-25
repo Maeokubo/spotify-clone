@@ -34,30 +34,30 @@ export type Database = {
       }
       liked_songs: {
         Row: {
-          created_at: string
+          created_at: string | null
           song_id: number
           user_id: string
         }
         Insert: {
-          created_at?: string
+          created_at?: string | null
           song_id: number
           user_id: string
         }
         Update: {
-          created_at?: string
+          created_at?: string | null
           song_id?: number
           user_id?: string
         }
         Relationships: [
           {
-            foreignKeyName: "liked_songs_song_id_fkey"
+            foreignKeyName: "public_liked_songs_song_id_fkey"
             columns: ["song_id"]
             isOneToOne: false
             referencedRelation: "songs"
             referencedColumns: ["id"]
           },
           {
-            foreignKeyName: "liked_songs_user_id_fkey"
+            foreignKeyName: "public_liked_songs_user_id_fkey"
             columns: ["user_id"]
             isOneToOne: false
             referencedRelation: "users"
@@ -145,34 +145,34 @@ export type Database = {
       songs: {
         Row: {
           author: string | null
-          created_at: string
+          created_at: string | null
           id: number
           image_path: string | null
-          song_path: string | null
+          "song-path": string | null
           title: string | null
           user_id: string | null
         }
         Insert: {
           author?: string | null
-          created_at?: string
+          created_at?: string | null
           id?: number
           image_path?: string | null
-          song_path?: string | null
+          "song-path"?: string | null
           title?: string | null
           user_id?: string | null
         }
         Update: {
           author?: string | null
-          created_at?: string
+          created_at?: string | null
           id?: number
           image_path?: string | null
-          song_path?: string | null
+          "song-path"?: string | null
           title?: string | null
           user_id?: string | null
         }
         Relationships: [
           {
-            foreignKeyName: "songs_user_id_fkey"
+            foreignKeyName: "public_songs_user_id_fkey"
             columns: ["user_id"]
             isOneToOne: false
             referencedRelation: "users"
