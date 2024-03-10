@@ -5,7 +5,6 @@ import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
 import { useRouter } from "next/navigation";
 import { toast } from "react-hot-toast";
 import { useSessionContext } from "@supabase/auth-helpers-react";
-
 import { useUser } from "@/hooks/useUser";
 import useAuthModal from "@/hooks/useAuthModal";
 
@@ -77,7 +76,7 @@ const LikeBtn: React.FC<LikeButtonProps> = ({
         toast.error(error.message);
       } else {
         setIsLiked(true);
-        toast.success('Success');
+        toast.success('Liked!');
       }
     }
 
@@ -86,11 +85,7 @@ const LikeBtn: React.FC<LikeButtonProps> = ({
 
   return (
     <button 
-      className="
-        cursor-pointer 
-        hover:opacity-75 
-        transition
-      "
+      className="cursor-pointer hover:opacity-75 transition"
       onClick={handleLike}
     >
       <Icon color={isLiked ? '#22c55e' : 'white'} size={25} />
