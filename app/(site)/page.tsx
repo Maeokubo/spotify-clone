@@ -30,8 +30,8 @@ export default async function Home() {
           </h1>
         </div>
         <div>
-          <PageContent songs={songs} />
-          {/*{songs.map((songs) => <div>{songs.title}</div>)}*/}
+          <PageContent songs={songs} /> 
+          {/* {songs.map((songs) => <div>{songs.title}</div>)} */}
         </div>
       </div>
     </div>

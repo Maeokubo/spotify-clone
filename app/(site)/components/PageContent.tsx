@@ -1,7 +1,7 @@
 "use client";
 
 import { Song } from "@/types";
-import useOnPlay from "@/hooks/usePlayer";
+import useOnPlay from "@/hooks/useOnplay";
 import SongItem from "@/components/SongItem";
 
 interface PageContentProps {
